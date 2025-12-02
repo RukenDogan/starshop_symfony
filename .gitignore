@@ -13,3 +13,18 @@
 /.php-cs-fixer.php
 /.php-cs-fixer.cache
 ###< php-cs-fixer/shim ###
+
+
+/.env.dev
+/.env.dev.php
+/.env.test
+/.env.test.php
+/.env.prod
+/.env.prod.php
+
+
+# Secrets
+/config/secrets/*/*.decrypt.private.php
+/config/secrets/*/*.encrypt.public.php
+/config/secrets/*/.gitignore
+/config/secrets/*/*.key
