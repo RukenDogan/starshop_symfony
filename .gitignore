@@ -28,3 +28,8 @@
 /config/secrets/*/*.encrypt.public.php
 /config/secrets/*/.gitignore
 /config/secrets/*/*.key
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
