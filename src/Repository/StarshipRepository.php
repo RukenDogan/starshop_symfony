@@ -23,6 +23,7 @@ class StarshipRepository
                 'Garden',
                 'Jean-Luc Pickles',
                 StarshipStatusEnum::IN_PROGRESS,
+                new \DateTimeImmutable('2020-01-01'),
             ),
 
             new Starship(
@@ -31,6 +32,7 @@ class StarshipRepository
                 'Latte',
                 'James T. Quick!',
                 StarshipStatusEnum::COMPLETED,
+                new \DateTimeImmutable('2020-01-01'),
             ),
             new Starship(
                 3,
@@ -38,6 +40,7 @@ class StarshipRepository
                 'Delta Tourist',
                 'Kathryn Journeyway',
                 StarshipStatusEnum::WAITING,
+                new \DateTimeImmutable('2020-01-01'),
             ),
         ];
     }
