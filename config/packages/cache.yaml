@@ -14,7 +14,8 @@
 
 framework:
     cache:
-        app: cache.adapter.array #pour le cache"app", utilise l'adapter en mémoire (array) (le cache se réinitialise à chaque refresh)
+        app: cache.adapter.filesystem # en prod : cache persistant
+        #cache.adapter.array : pour le cache"app" en dev, utilise l'adapter en mémoire (array) (le cache se réinitialise à chaque refresh)
 
         # Namespaced pools use the above "app" backend by default
         pools:
