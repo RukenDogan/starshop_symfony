@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\StarshipRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Contracts\Cache\ItemInterface;
@@ -17,10 +18,10 @@ class MainController extends AbstractController
     public function homepage(
         StarshipRepository $starshipRepository,
         HttpClientInterface $client,
-        CacheInterface $cache,
-        CacheInterface $issLocationPool,
+        #[Autowire(param: 'iss_location_cache_ttl')]
+        $issLocationCacheTtl,
     ): Response {
-
+        dd($this->getParameter('iss_location_cache_ttl'));
         $ships = $starshipRepository->findAll();
         $myShip = $ships[array_rand($ships)];
 
