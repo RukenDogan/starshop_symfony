@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\StarshipRepository;
+use Symfony\Bridge\Twig\Command\DebugCommand;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,15 @@ class MainController extends AbstractController
     public function homepage(
         StarshipRepository $starshipRepository,
         HttpClientInterface $client,
+        CacheInterface $cache,
+        CacheInterface $issLocationPool,
         #[Autowire(param: 'iss_location_cache_ttl')]
         $issLocationCacheTtl,
+        #[Autowire(service: 'twig.command.debug')]
+        DebugCommand $twigDebugCommand,
     ): Response {
         dd($this->getParameter('iss_location_cache_ttl'));
+
         $ships = $starshipRepository->findAll();
         $myShip = $ships[array_rand($ships)];
 
