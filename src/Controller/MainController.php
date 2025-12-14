@@ -11,9 +11,9 @@ class MainController extends AbstractController
 {
     #[Route('/', name: 'app_main_homepage')]
     public function homepage(
-        StarshipRepository $starshipRepository,
+        StarshipRepository $repository,
     ): Response {
-        $ships = $starshipRepository->findAll();
+        $ships = $repository->findAll();
         $myShip = $ships[array_rand($ships)];
 
             return $this->render('main/homepage.html.twig', [
