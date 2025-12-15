@@ -31,6 +31,11 @@ class StarshipRepository extends ServiceEntityRepository
                 ->getResult();
         }
 
+        public function findMyShip(): Starship
+        {
+            return $this->findAll()[0];
+        }
+
 
 
 
