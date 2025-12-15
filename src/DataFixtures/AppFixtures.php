@@ -35,5 +35,7 @@ class AppFixtures extends Fixture
             'status' => StarshipStatusEnum::WAITING,
             'arrivedAt' => new \DateTimeImmutable('-1 month'),
         ]);
+
+        StarshipFactory::createMany(20);
     }
 }
