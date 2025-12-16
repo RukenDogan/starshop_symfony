@@ -1250,6 +1250,14 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         default_namespace?: scalar|null, // Default namespace where stories will be created by maker. // Default: "Story"
  *     },
  * }
+ * @psalm-type BabdevPagerfantaConfig = array{
+ *     default_view?: scalar|null, // Default: "default"
+ *     default_twig_template?: scalar|null, // Default: "@BabDevPagerfanta/default.html.twig"
+ *     exceptions_strategy?: array{
+ *         out_of_range_page?: "to_http_not_found"|"custom", // Default: "to_http_not_found"
+ *         not_valid_current_page?: "to_http_not_found"|"custom", // Default: "to_http_not_found"
+ *     },
+ * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -1263,6 +1271,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *     turbo?: TurboConfig,
  *     doctrine?: DoctrineConfig,
  *     doctrine_migrations?: DoctrineMigrationsConfig,
+ *     babdev_pagerfanta?: BabdevPagerfantaConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
@@ -1280,6 +1289,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         doctrine?: DoctrineConfig,
  *         doctrine_migrations?: DoctrineMigrationsConfig,
  *         zenstruck_foundry?: ZenstruckFoundryConfig,
+ *         babdev_pagerfanta?: BabdevPagerfantaConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
@@ -1294,6 +1304,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         turbo?: TurboConfig,
  *         doctrine?: DoctrineConfig,
  *         doctrine_migrations?: DoctrineMigrationsConfig,
+ *         babdev_pagerfanta?: BabdevPagerfantaConfig,
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
@@ -1310,6 +1321,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         doctrine?: DoctrineConfig,
  *         doctrine_migrations?: DoctrineMigrationsConfig,
  *         zenstruck_foundry?: ZenstruckFoundryConfig,
+ *         babdev_pagerfanta?: BabdevPagerfantaConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,
