@@ -2,6 +2,8 @@ Starshop Symfony Project
 =======================
 
 Ce repository a été créé pour m’exercer à Symfony dans le cadre de mon stage.
+Le cours utilise Docker avec PostgreSQL, mais ce projet a été développé avec WAMP et MySQL.
+
 
 Cours suivis
 ------------
